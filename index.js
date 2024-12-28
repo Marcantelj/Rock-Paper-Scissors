@@ -35,6 +35,7 @@ CALL playround with const peramiters (humanchoice and computerchoice)
 
 // CODE 
 
+// When called generates a random number 0-2 that results in Rock, Paper, or Scissors.
 let computerChoice = () => {
     let randomChoice = Math.floor(Math.random() * 3);
     switch(randomChoice) {
@@ -47,6 +48,7 @@ let computerChoice = () => {
     }
 }
 
+// When called takes an input from user and checks it to make sure its Rock, Paper, Scissors.
 let humanChoice = () => {
     let humanInput = prompt("Select Rock, Paper, or Scissors! \n")
     if (humanInput.toLowerCase() == "rock") {
@@ -61,9 +63,11 @@ let humanChoice = () => {
     else humanChoice();
 }
 
+// Scores tracked 
 var humanScore = 0;
-var computerScore = 0;
+var computerScore = 0; 
 
+// When called the gets inputs from both humanSelection and computerSelection then compares to see who won.
 let playRound = (humanSelection, computerSelection) => {
     if (humanSelection.toLowerCase() == computerSelection.toLowerCase()) {
         console.log("It was a TIE!");
@@ -98,6 +102,7 @@ let playRound = (humanSelection, computerSelection) => {
 const humanSelection = humanChoice();
 const computerSelection = computerChoice();
 
+// Output of code.
 console.log(humanSelection);
 console.log(computerSelection);
 playRound(humanSelection,computerSelection);
